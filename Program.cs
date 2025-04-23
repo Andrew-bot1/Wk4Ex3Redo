@@ -56,7 +56,7 @@ namespace Wk4Ex3redo
             string rev="";
 
             //loop through the last character to the first character
-            for (int i = input.Length; i >= 0; i--)
+            for (int i = input.Length-1; i >= 0; i--)
             {
                 rev += input[i];
             }
@@ -67,7 +67,11 @@ namespace Wk4Ex3redo
         //method to count vowels
         static void CountVowels(string input)
         {
+            //declare string of vowels
+            string vowels = "aeiou";
 
+            //loop through all characters of input
+            foreach (char c in input)
         }
 
         //method to see if string is palindrome

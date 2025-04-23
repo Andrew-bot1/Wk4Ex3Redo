@@ -56,7 +56,7 @@ namespace Wk4Ex3redo
             string rev="";
 
             //loop through the last character to the first character
-            for (int i = input.Length; i == 0; i--)
+            for (int i = input.Length; i >= 0; i--)
             {
                 rev += input[i];
             }

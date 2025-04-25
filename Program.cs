@@ -32,11 +32,11 @@ namespace Wk4Ex3redo
                         break;
                     case 2:
                         //enter method to count vowels
-                        CountVowels(input);
+                        Console.WriteLine($"There are {CountVowels(input)} vowels in {input}");
                         break;
                     case 3:
                         //enter method to see if string is palindrome
-                        IsPalindrome(input);
+                        Console.WriteLine($"Palindrom is: {IsPalindrome(input)}");
                         break;
                     case 4:
                         //exit
@@ -53,10 +53,10 @@ namespace Wk4Ex3redo
         static string ReverseString(string input)
         {
             //declare reverse string
-            string rev="";
+            string rev = "";
 
             //loop through the last character to the first character
-            for (int i = input.Length-1; i >= 0; i--)
+            for (int i = input.Length - 1; i >= 0; i--)
             {
                 rev += input[i];
             }
@@ -64,20 +64,47 @@ namespace Wk4Ex3redo
             //return reverse string
             return rev;
         }
+
         //method to count vowels
-        static void CountVowels(string input)
+        static int CountVowels(string input)
         {
+            //declare counter
+            int counter = 0;
+
             //declare string of vowels
             string vowels = "aeiou";
 
             //loop through all characters of input
-            foreach (char c in input)
+            foreach (char c in input.ToLower())
+            {
+                //loop through all vowels
+                foreach (char ch in vowels)
+                {
+                    //see if letter is a vowel
+                    if (c == ch)
+                    {
+                        //increase vowel counter
+                        counter++;
+                    }
+                }
+            }
+
+            //return number of vowels
+            return counter;
         }
 
         //method to see if string is palindrome
-        static void IsPalindrome(string input)
+        static bool IsPalindrome(string input)
         {
-
+            //declare boolean
+            bool test = false;
+            //see if string is palindrome
+            if (input == ReverseString(input))
+            {
+                test = true;
+            }
+            return test;
+                    
         }
     }
 }
